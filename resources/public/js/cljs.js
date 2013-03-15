@@ -12694,33 +12694,155 @@ cljs.core.UUID.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
 cljs.core.UUID.prototype.toString = function() {
   return cljs.core.pr_str.call(null, this)
 };
+var words = {};
+words.all_words = cljs.core.PersistentVector.fromArray([cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"hestur", "\ufdd0'sve":"h\u00e4st", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", "\ufdd0'mask", "\ufdd0'nom"])}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"fjall", "\ufdd0'sve":"fj\u00e4ll", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", 
+"\ufdd0'neutr", "\ufdd0'nom"])}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"eldh\u00fas", "\ufdd0'sve":"k\u00f6k", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", "\ufdd0'neutr", "\ufdd0'nom"])})], !0);
+var clojure = {string:{}};
+clojure.string.seq_reverse = function(a) {
+  return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
+};
+clojure.string.reverse = function(a) {
+  return a.split("").reverse().join("")
+};
+clojure.string.replace = function(a, b, c) {
+  if(cljs.core.string_QMARK_.call(null, b)) {
+    return a.replace(RegExp(goog.string.regExpEscape(b), "g"), c)
+  }
+  if(cljs.core.truth_(b.hasOwnProperty("source"))) {
+    return a.replace(RegExp(b.source, "g"), c)
+  }
+  throw[cljs.core.str("Invalid match arg: "), cljs.core.str(b)].join("");
+};
+clojure.string.replace_first = function(a, b, c) {
+  return a.replace(b, c)
+};
+clojure.string.join = function() {
+  var a = null, b = function(a) {
+    return cljs.core.apply.call(null, cljs.core.str, a)
+  }, c = function(a, b) {
+    return cljs.core.apply.call(null, cljs.core.str, cljs.core.interpose.call(null, a, b))
+  }, a = function(a, e) {
+    switch(arguments.length) {
+      case 1:
+        return b.call(this, a);
+      case 2:
+        return c.call(this, a, e)
+    }
+    throw Error("Invalid arity: " + arguments.length);
+  };
+  a.cljs$lang$arity$1 = b;
+  a.cljs$lang$arity$2 = c;
+  return a
+}();
+clojure.string.upper_case = function(a) {
+  return a.toUpperCase()
+};
+clojure.string.lower_case = function(a) {
+  return a.toLowerCase()
+};
+clojure.string.capitalize = function(a) {
+  return 2 > cljs.core.count.call(null, a) ? clojure.string.upper_case.call(null, a) : [cljs.core.str(clojure.string.upper_case.call(null, cljs.core.subs.call(null, a, 0, 1))), cljs.core.str(clojure.string.lower_case.call(null, cljs.core.subs.call(null, a, 1)))].join("")
+};
+clojure.string.split = function() {
+  var a = null, b = function(a, b) {
+    return cljs.core.vec.call(null, ("" + cljs.core.str(a)).split(b))
+  }, c = function(a, b, c) {
+    if(1 > c) {
+      return cljs.core.vec.call(null, ("" + cljs.core.str(a)).split(b))
+    }
+    for(var g = cljs.core.PersistentVector.EMPTY;;) {
+      if(cljs.core._EQ_.call(null, c, 1)) {
+        return cljs.core.conj.call(null, g, a)
+      }
+      var h = cljs.core.re_find.call(null, b, a);
+      if(cljs.core.truth_(h)) {
+        var i = h, h = a.indexOf(i), i = a.substring(h + cljs.core.count.call(null, i)), c = c - 1, g = cljs.core.conj.call(null, g, a.substring(0, h)), a = i
+      }else {
+        return cljs.core.conj.call(null, g, a)
+      }
+    }
+  }, a = function(a, e, f) {
+    switch(arguments.length) {
+      case 2:
+        return b.call(this, a, e);
+      case 3:
+        return c.call(this, a, e, f)
+    }
+    throw Error("Invalid arity: " + arguments.length);
+  };
+  a.cljs$lang$arity$2 = b;
+  a.cljs$lang$arity$3 = c;
+  return a
+}();
+clojure.string.split_lines = function(a) {
+  return clojure.string.split.call(null, a, /\n|\r\n/)
+};
+clojure.string.trim = function(a) {
+  return goog.string.trim(a)
+};
+clojure.string.triml = function(a) {
+  return goog.string.trimLeft(a)
+};
+clojure.string.trimr = function(a) {
+  return goog.string.trimRight(a)
+};
+clojure.string.trim_newline = function(a) {
+  for(var b = a.length;;) {
+    if(0 === b) {
+      return""
+    }
+    var c = cljs.core._lookup.call(null, a, b - 1, null);
+    var d = cljs.core._EQ_.call(null, c, "\n"), c = d ? d : cljs.core._EQ_.call(null, c, "\r");
+    if(c) {
+      b -= 1
+    }else {
+      return a.substring(0, b)
+    }
+  }
+};
+clojure.string.blank_QMARK_ = function(a) {
+  return goog.string.isEmptySafe(a)
+};
+clojure.string.escape = function(a, b) {
+  for(var c = new goog.string.StringBuffer, d = a.length, e = 0;;) {
+    if(cljs.core._EQ_.call(null, d, e)) {
+      return c.toString()
+    }
+    var f = a.charAt(e), g = cljs.core._lookup.call(null, b, f, null);
+    cljs.core.truth_(g) ? c.append("" + cljs.core.str(g)) : c.append(f);
+    e += 1
+  }
+};
 var client = {};
 client.languages = cljs.core.PersistentVector.fromArray(["\ufdd0'isl", "\ufdd0'sve"], !0);
 client.other_language = cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"\ufdd0'sve", "\ufdd0'sve":"\ufdd0'isl"});
 client.word = document.getElementById("word");
+client.correction = document.getElementById("correction");
 client.answer = document.getElementById("answer");
 client.cheat = document.getElementById("cheat");
 client.langlabel = document.getElementById("langlabel");
 client.submit = document.getElementById("submit-button");
-client.hint = document.getElementById("hint-button");
-client.current_item = cljs.core.atom.call(null, null);
-client.current_lang = cljs.core.atom.call(null, null);
-client.wordlist = cljs.core.PersistentVector.fromArray([cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"hestur", "\ufdd0'sve":"h\u00e4st"}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"fjall", "\ufdd0'sve":"fj\u00e4ll"}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"eldh\u00fas", "\ufdd0'sve":"k\u00f6k"})], !0);
+client.state = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'all-items", "\ufdd0'item", "\ufdd0'question-language", "\ufdd0'answer-language"], {"\ufdd0'all-items":words.all_words, "\ufdd0'item":null, "\ufdd0'question-language":null, "\ufdd0'answer-language":null}));
+client.get_new_word = function() {
+  return cljs.core.rand_nth.call(null, (new cljs.core.Keyword("\ufdd0'all-items")).call(null, cljs.core.deref.call(null, client.state)))
+};
 client.show_new_word_BANG_ = function() {
-  var a = cljs.core.rand_nth.call(null, client.wordlist), b = cljs.core.rand_nth.call(null, client.languages), c = client.other_language.call(null, b);
-  cljs.core.reset_BANG_.call(null, client.current_item, a);
-  cljs.core.reset_BANG_.call(null, client.current_lang, c);
+  var a = client.get_new_word.call(null), b = cljs.core.rand_nth.call(null, client.languages), c = client.other_language.call(null, b);
+  cljs.core.swap_BANG_.call(null, client.state, cljs.core.merge, cljs.core.ObjMap.fromObject(["\ufdd0'item", "\ufdd0'question-language", "\ufdd0'answer-language"], {"\ufdd0'item":a, "\ufdd0'question-language":b, "\ufdd0'answer-language":c}));
   word.innerHTML = b.call(null, a);
   word.style.color = "#000";
-  langlabel.innerHTML = cljs.core.name.call(null, b);
-  cheat.style.display = "none";
-  return cheat.innerHTML = [cljs.core.str("Answer: "), cljs.core.str(c.call(null, a))].join("")
+  correction.innerHTML = "";
+  langlabel.innerHTML = [cljs.core.str("("), cljs.core.str(cljs.core.name.call(null, b)), cljs.core.str(" "), cljs.core.str(clojure.string.join.call(null, " ", cljs.core.map.call(null, function(a) {
+    return cljs.core.name.call(null, a)
+  }, (new cljs.core.Keyword("\ufdd0'tags")).call(null, a)))), cljs.core.str(")")].join("");
+  answer.value = "";
+  return client.answer.focus()
+};
+client.correct_answer = function() {
+  return cljs.core._lookup.call(null, (new cljs.core.Keyword("\ufdd0'item")).call(null, cljs.core.deref.call(null, client.state)), (new cljs.core.Keyword("\ufdd0'answer-language")).call(null, cljs.core.deref.call(null, client.state)), null)
 };
 client.on_new_word_timeout = function() {
   return client.show_new_word_BANG_.call(null)
-};
-client.on_hint = function() {
-  return cheat.style.display = "block"
 };
 client.on_correct = function() {
   word.style.color = "#292";
@@ -12728,16 +12850,14 @@ client.on_correct = function() {
 };
 client.on_wrong = function() {
   word.style.color = "#F00";
-  client.on_hint.call(null);
+  correction.innerHTML = [cljs.core.str("= "), cljs.core.str(client.correct_answer.call(null))].join("");
   return setTimeout(client.on_new_word_timeout, 1E3)
 };
 client.on_submit = function() {
-  var a = cljs.core._lookup.call(null, cljs.core.deref.call(null, client.current_item), cljs.core.deref.call(null, client.current_lang), null);
-  return(cljs.core._EQ_.call(null, a, answer.value) ? client.on_correct : client.on_wrong).call(null)
+  return(cljs.core._EQ_.call(null, client.correct_answer.call(null), answer.value) ? client.on_correct : client.on_wrong).call(null)
 };
-client.onkeypress = function() {
-  return null
+client.onkeydown = function(a) {
+  return cljs.core._EQ_.call(null, 13, a.keyCode) ? client.on_submit.call(null) : null
 };
 client.submit.addEventListener("click", client.on_submit);
-client.hint.addEventListener("click", client.on_hint);
 client.show_new_word_BANG_.call(null);

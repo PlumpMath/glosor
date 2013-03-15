@@ -4,7 +4,8 @@
 <head>
   <title>Glosor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/page.css">
 </head>
 <body>
 
@@ -13,11 +14,11 @@
     <div class="row">
       <div class="span12">
         <div class="hero-unit" style="margin-top:1em">
-          <h1 id="word"></h1>
+          <h1 class="same-line" id="word"></h1>
+          <h1 class="same-line" id="correction" style="margin-left: 0.3em"></h1>
           <p id="langlabel"></p>
-          <input id="answer" onkeypress="client.onkeypress()">
+          <input id="answer" onkeydown="client.onkeydown(event)">
           <button id="submit-button">Submit</button>
-          <button id="hint-button">Hint</button>
           <p id="cheat"></p>
         </div>
       </div>
