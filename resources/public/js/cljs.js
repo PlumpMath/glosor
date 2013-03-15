@@ -12867,5 +12867,5 @@ client.onkeydown = function(a) {
   return cljs.core._EQ_.call(null, 13, a.keyCode) ? client.on_submit.call(null) : null
 };
 client.submit.addEventListener("click", client.on_submit);
-jQuery(client.ask_sve).button("toggle");
+jQuery(client.ask_both).button("toggle");
 client.show_new_word_BANG_.call(null);

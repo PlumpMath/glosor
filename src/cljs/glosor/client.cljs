@@ -70,5 +70,5 @@
 
 (.addEventListener submit "click" on-submit)
 
-(.button (js/jQuery ask-sve) "toggle")
+(.button (js/jQuery ask-both) "toggle")
 (show-new-word!)
