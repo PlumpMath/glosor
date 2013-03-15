@@ -12694,7 +12694,50 @@ cljs.core.UUID.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
 cljs.core.UUID.prototype.toString = function() {
   return cljs.core.pr_str.call(null, this)
 };
-var hello_clojurescript = {};
-hello_clojurescript.word = document.getElementById("word");
-hello_clojurescript.wordlist = cljs.core.PersistentVector.fromArray(["hestur", "fjall", "og", "eldh\u00fas"], !0);
-word.innerHTML = cljs.core.rand_nth.call(null, hello_clojurescript.wordlist);
+var client = {};
+client.languages = cljs.core.PersistentVector.fromArray(["\ufdd0'isl", "\ufdd0'sve"], !0);
+client.other_language = cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"\ufdd0'sve", "\ufdd0'sve":"\ufdd0'isl"});
+client.word = document.getElementById("word");
+client.answer = document.getElementById("answer");
+client.cheat = document.getElementById("cheat");
+client.langlabel = document.getElementById("langlabel");
+client.submit = document.getElementById("submit-button");
+client.hint = document.getElementById("hint-button");
+client.current_item = cljs.core.atom.call(null, null);
+client.current_lang = cljs.core.atom.call(null, null);
+client.wordlist = cljs.core.PersistentVector.fromArray([cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"hestur", "\ufdd0'sve":"h\u00e4st"}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"fjall", "\ufdd0'sve":"fj\u00e4ll"}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":"eldh\u00fas", "\ufdd0'sve":"k\u00f6k"})], !0);
+client.show_new_word_BANG_ = function() {
+  var a = cljs.core.rand_nth.call(null, client.wordlist), b = cljs.core.rand_nth.call(null, client.languages), c = client.other_language.call(null, b);
+  cljs.core.reset_BANG_.call(null, client.current_item, a);
+  cljs.core.reset_BANG_.call(null, client.current_lang, c);
+  word.innerHTML = b.call(null, a);
+  word.style.color = "#000";
+  langlabel.innerHTML = cljs.core.name.call(null, b);
+  cheat.style.display = "none";
+  return cheat.innerHTML = [cljs.core.str("Answer: "), cljs.core.str(c.call(null, a))].join("")
+};
+client.on_new_word_timeout = function() {
+  return client.show_new_word_BANG_.call(null)
+};
+client.on_hint = function() {
+  return cheat.style.display = "block"
+};
+client.on_correct = function() {
+  word.style.color = "#292";
+  return setTimeout(client.on_new_word_timeout, 500)
+};
+client.on_wrong = function() {
+  word.style.color = "#F00";
+  client.on_hint.call(null);
+  return setTimeout(client.on_new_word_timeout, 1E3)
+};
+client.on_submit = function() {
+  var a = cljs.core._lookup.call(null, cljs.core.deref.call(null, client.current_item), cljs.core.deref.call(null, client.current_lang), null);
+  return(cljs.core._EQ_.call(null, a, answer.value) ? client.on_correct : client.on_wrong).call(null)
+};
+client.onkeypress = function() {
+  return null
+};
+client.submit.addEventListener("click", client.on_submit);
+client.hint.addEventListener("click", client.on_hint);
+client.show_new_word_BANG_.call(null);
