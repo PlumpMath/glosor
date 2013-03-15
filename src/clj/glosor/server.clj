@@ -1,54 +1,21 @@
 (ns glosor.server
+  (:use compojure.core
+        [hiccup.middleware :only (wrap-base-url)])
   (:require [ring.adapter.jetty :as jetty]
-            [ring.middleware.resource :as resources]
-            [ring.util.response :as response]
-            [hiccup.core :as h]
-            [hiccup.page :as hp]
-            [hiccup.form :as hf])
-  (:gen-class))
+            [ring.util.response :as rur]
+            [compojure.route :as route]
+            [compojure.handler :as handler]
+            [compojure.response :as response]))
 
-(def wordlist ["häst" 
-               "hund"
-               "katt"
-               "fisk"])
+(defroutes main-routes
+  (GET "/" [] (rur/file-response "index.html" {:root "./resources/public"}))
+  (route/resources "/")
+  (route/not-found "Page not found"))
 
-(defn app-body [] 
-  (h/html 
-   (hp/include-css "css/bootstrap.min.css")
-   [:content [:p {:id "word"} "empty"]
-              (hf/text-field "answer" "Answer here")
-              (hf/submit-button "Submit")]
-   (hp/include-js "js/cljs.js")
-   (hp/include-js "js/bootstrap.min.js")))
-
-(defn response-404 []
-  (h/html
-   [:h1 404]))
-
-(defn render-app []
-  {:status 200
-   :headers {"Content-Type" "text/html"}
-   :body (app-body)})
-
-(defn render-wordlist []
-  (println "fetching wordlist...")
-  {:status 200
-   :headers {"Content-Type" "text/html"}
-   :body (binding [*print-dup* false] (str wordlist))})
-
-(defn handler [request]
-  (if (= "/wordlist" (:uri request))
-    (render-wordlist)
-    (response-404)))
-
-(def app 
-  (-> handler
-      (resources/wrap-resource "public")))
+(def app
+  (-> (handler/site main-routes)
+      (wrap-base-url)))
 
 (defn -main [& args]
-  (let [port (if 
-               (empty? args) 3000
-               (Integer. (first args)))]
+  (let [port (if (empty? args) 3000 (Integer. (first args)))]
     (jetty/run-jetty app {:port port})))
-
-;(-main)

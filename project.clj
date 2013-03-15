@@ -3,9 +3,10 @@
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.4.0"]
                  [ring "1.1.8"]
-                 [hiccup "1.0.2"]]
+                 [hiccup "1.0.2"]
+                 [compojure "1.1.5"]]
   :plugins [[lein-cljsbuild "0.3.0"]]
-  :hooks [leiningen.cljsbuild]
+  ;:hooks [leiningen.cljsbuild]
   :source-paths ["src/clj"]
   :cljsbuild { 
     :builds {

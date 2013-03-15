@@ -1,1 +1,1 @@
-web: lein with-profile production trampoline run -server.web $PORT
+web: lein with-profile production trampoline run -m glosor.server $PORT
