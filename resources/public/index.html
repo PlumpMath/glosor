@@ -9,20 +9,33 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" style="margin-top:1em">
 
     <div class="row">
-      <div class="span12">
-        <div class="hero-unit" style="margin-top:1em">
+      <div class="span9">
+        <div class="hero-unit">
           <h1 class="same-line" id="word"></h1>
           <h1 class="same-line" id="correction" style="margin-left: 0.3em"></h1>
           <p id="langlabel"></p>
           <input id="answer" onkeydown="client.onkeydown(event)">
-          <button id="submit-button">Submit</button>
+          <button id="submit-button">OK</button>
           <p id="cheat"></p>
         </div>
       </div>
+
+      <div class="span3">
+        <h2>Inst&aumlllningar</h2>
+        <p>Testa spr&aringk:</p>
+        <div class="btn-group" data-toggle="buttons-radio">
+          <button id="ask-both" type="button" class="btn btn-primary">B&aringda</button>
+          <button id="ask-isl" type="button" class="btn btn-primary">Isl&aumlndska</button>
+          <button id="ask-sve" type="button" class="btn btn-primary">Svenska</button>          
+        </div>
+      </div>
     </div>
+
+    
+
   </div>
 
   <script src="http://code.jquery.com/jquery.js"></script>

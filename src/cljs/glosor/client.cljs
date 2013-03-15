@@ -11,6 +11,9 @@
 (def cheat (.getElementById js/document "cheat"))
 (def langlabel (.getElementById js/document "langlabel"))
 (def submit (.getElementById js/document "submit-button"))
+(def ask-both (.getElementById js/document "ask-both"))
+(def ask-isl (.getElementById js/document "ask-isl"))
+(def ask-sve (.getElementById js/document "ask-sve"))
 
 (def state (atom {:all-items w/all-words
                   :item nil
@@ -20,10 +23,17 @@
 (defn get-new-word []
   (rand-nth (:all-items @state)))
 
+(defn get-language []
+  (cond 
+   (.hasClass (js/jQuery ask-isl) "active") :isl
+   (.hasClass (js/jQuery ask-sve) "active") :sve
+   :else (rand-nth languages)))
+
 (defn show-new-word! []
   (let [item (get-new-word)
-        question-language (rand-nth languages) 
+        question-language (get-language)
         answer-language (other-language question-language)]
+    (js/console.log (get-language))
     (swap! state merge {:item item
                         :question-language question-language
                         :answer-language answer-language})
@@ -60,4 +70,5 @@
 
 (.addEventListener submit "click" on-submit)
 
+(.button (js/jQuery ask-sve) "toggle")
 (show-new-word!)

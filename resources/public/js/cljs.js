@@ -12822,12 +12822,19 @@ client.answer = document.getElementById("answer");
 client.cheat = document.getElementById("cheat");
 client.langlabel = document.getElementById("langlabel");
 client.submit = document.getElementById("submit-button");
+client.ask_both = document.getElementById("ask-both");
+client.ask_isl = document.getElementById("ask-isl");
+client.ask_sve = document.getElementById("ask-sve");
 client.state = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'all-items", "\ufdd0'item", "\ufdd0'question-language", "\ufdd0'answer-language"], {"\ufdd0'all-items":words.all_words, "\ufdd0'item":null, "\ufdd0'question-language":null, "\ufdd0'answer-language":null}));
 client.get_new_word = function() {
   return cljs.core.rand_nth.call(null, (new cljs.core.Keyword("\ufdd0'all-items")).call(null, cljs.core.deref.call(null, client.state)))
 };
+client.get_language = function() {
+  return cljs.core.truth_(jQuery(client.ask_isl).hasClass("active")) ? "\ufdd0'isl" : cljs.core.truth_(jQuery(client.ask_sve).hasClass("active")) ? "\ufdd0'sve" : cljs.core.rand_nth.call(null, client.languages)
+};
 client.show_new_word_BANG_ = function() {
-  var a = client.get_new_word.call(null), b = cljs.core.rand_nth.call(null, client.languages), c = client.other_language.call(null, b);
+  var a = client.get_new_word.call(null), b = client.get_language.call(null), c = client.other_language.call(null, b);
+  console.log(client.get_language.call(null));
   cljs.core.swap_BANG_.call(null, client.state, cljs.core.merge, cljs.core.ObjMap.fromObject(["\ufdd0'item", "\ufdd0'question-language", "\ufdd0'answer-language"], {"\ufdd0'item":a, "\ufdd0'question-language":b, "\ufdd0'answer-language":c}));
   word.innerHTML = b.call(null, a);
   word.style.color = "#000";
@@ -12860,4 +12867,5 @@ client.onkeydown = function(a) {
   return cljs.core._EQ_.call(null, 13, a.keyCode) ? client.on_submit.call(null) : null
 };
 client.submit.addEventListener("click", client.on_submit);
+jQuery(client.ask_sve).button("toggle");
 client.show_new_word_BANG_.call(null);
