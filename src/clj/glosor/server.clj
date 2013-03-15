@@ -46,6 +46,9 @@
       (resources/wrap-resource "public")))
 
 (defn -main [& args]
-  (jetty/run-jetty app {:port 3000}))
+  (let [port (if 
+               (empty? args) 3000
+               (Integer. (first args)))]
+    (jetty/run-jetty app {:port port})))
 
 ;(-main)
