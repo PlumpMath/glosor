@@ -12694,22 +12694,31 @@ cljs.core.UUID.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
 cljs.core.UUID.prototype.toString = function() {
   return cljs.core.pr_str.call(null, this)
 };
-var words = {};
-words.all_items = cljs.core.PersistentVector.fromArray([cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"hestur", "\ufdd0'sve":"h\u00e4st", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", "\ufdd0'mask", "\ufdd0'nom"])}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"fjall", "\ufdd0'sve":"fj\u00e4ll", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", 
-"\ufdd0'neutr", "\ufdd0'nom"])}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"eldh\u00fas", "\ufdd0'sve":"k\u00f6k", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", "\ufdd0'neutr", "\ufdd0'nom"])})], !0);
-words.reset_indexes = function(a) {
+var words = {reset_indexes:function(a) {
   return cljs.core.map.call(null, function(a, c) {
     return cljs.core.assoc.call(null, a, "\ufdd0'index", c)
   }, a, cljs.core.range.call(null))
-};
-words.reset_score = function(a) {
+}, reset_score:function(a) {
   return cljs.core.map.call(null, function(a) {
     return cljs.core.assoc.call(null, a, "\ufdd0'score", 0)
   }, a)
-};
-words.reset = function(a) {
+}, reset:function(a) {
   return cljs.core.vec.call(null, words.reset_score.call(null, words.reset_indexes.call(null, a)))
-};
+}, verb_inf:function(a, b) {
+  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'inf", "\ufdd0'verb"])})
+}, subs_nom:function(a, b, c) {
+  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray([c, "\ufdd0'sing", "\ufdd0'subs", "\ufdd0'nom"])})
+}, subs_nom_plur:function(a, b, c) {
+  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray([c, "\ufdd0'subs", "\ufdd0'nom", "\ufdd0'plur"])})
+}, adj:function(a, b) {
+  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":a, "\ufdd0'sve":b})
+}};
+words.all_items = cljs.core.PersistentVector.fromArray([words.subs_nom.call(null, "g\u00f3lf", "golv", "\ufdd0'neutr"), words.subs_nom.call(null, "par", "par", "\ufdd0'neutr"), words.subs_nom.call(null, "sk\u00e1l", "sk\u00e5l", "\ufdd0'fem"), words.subs_nom.call(null, "\u00fevottav\u00e9l", "tv\u00e4ttmaskin", "\ufdd0'fem"), words.subs_nom.call(null, "rafstraumur", "str\u00f6m", "\ufdd0'mask"), words.subs_nom.call(null, "eldav\u00e9l", "spis", "\ufdd0'fem"), words.subs_nom.call(null, "prinsessa", 
+"prinsessa", "\ufdd0'fem"), words.subs_nom.call(null, "skrifstofa", "kontor", "\ufdd0'fem"), words.subs_nom.call(null, "br\u00e9f", "brev", "\ufdd0'neutr"), words.subs_nom.call(null, "s\u00edmi", "telefon", "\ufdd0'mask"), words.subs_nom.call(null, "skjal", "dokument", "\ufdd0'neutr"), words.subs_nom_plur.call(null, "stj\u00f3rnm\u00e1l", "politik", "\ufdd0'neutr"), words.subs_nom.call(null, "\u00edhald", "konservatism", "\ufdd0'neutr"), words.subs_nom.call(null, "fundur", "m\u00f6te", "\ufdd0'mask"), 
+words.subs_nom.call(null, "eldur", "eld", "\ufdd0'mask"), words.subs_nom.call(null, "sl\u00f6kkvili\u00f0", "brandk\u00e5r", "\ufdd0'neutr"), words.subs_nom.call(null, "efni", "material", "\ufdd0'neutr"), words.subs_nom.call(null, "kafli", "kapitel", "\ufdd0'mask"), words.subs_nom.call(null, "sk\u00f3gur", "skog", "\ufdd0'mask"), words.subs_nom.call(null, "h\u00fas", "hus", "\ufdd0'neutr"), words.subs_nom.call(null, "\u00feak", "tak", "\ufdd0'neutr"), words.subs_nom.call(null, "gluggakarmur", "f\u00f6nsterkarm", 
+"\ufdd0'mask"), words.subs_nom.call(null, "dreki", "drake", "\ufdd0'mask"), words.subs_nom.call(null, "foreldri", "f\u00f6r\u00e4lder", "\ufdd0'neutr"), words.subs_nom.call(null, "pabbi", "pappa", "\ufdd0'mask"), words.subs_nom.call(null, "land", "land", "\ufdd0'neutr"), words.subs_nom.call(null, "fjall", "fj\u00e4ll", "\ufdd0'neutr"), words.subs_nom.call(null, "dalur", "dal", "\ufdd0'mask"), words.subs_nom.call(null, "eldh\u00fas", "k\u00f6k", "\ufdd0'neutr"), words.subs_nom.call(null, "matur", 
+"mat", "\ufdd0'mask"), words.subs_nom.call(null, "grautur", "gr\u00f6t", "\ufdd0'mask"), words.subs_nom.call(null, "diskur", "tallrik", "\ufdd0'mask"), words.subs_nom.call(null, "st\u00f3ll", "stol", "\ufdd0'mask"), words.subs_nom.call(null, "baki", "rygg", "\ufdd0'neutr"), words.subs_nom.call(null, "gestur", "g\u00e4st", "\ufdd0'mask"), words.subs_nom.call(null, "kaffi", "kaffe", "\ufdd0'neutr"), words.subs_nom.call(null, "svefnherbergi", "sovrum", "\ufdd0'neutr"), words.subs_nom.call(null, "r\u00fam", 
+"s\u00e4ng", "\ufdd0'neutr"), words.subs_nom.call(null, "gafl", "gavel", "\ufdd0'mask"), words.subs_nom.call(null, "s\u00e6ng", "t\u00e4cke", "\ufdd0'fem"), words.subs_nom.call(null, "morgunn", "morgon", "\ufdd0'mask"), words.subs_nom.call(null, "s\u00f3l", "sol", "\ufdd0'fem"), words.subs_nom.call(null, "gluggi", "f\u00f6nster", "\ufdd0'mask")], !0);
 var clojure = {string:{}};
 clojure.string.seq_reverse = function(a) {
   return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
