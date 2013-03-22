@@ -12695,8 +12695,21 @@ cljs.core.UUID.prototype.toString = function() {
   return cljs.core.pr_str.call(null, this)
 };
 var words = {};
-words.all_words = cljs.core.PersistentVector.fromArray([cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"hestur", "\ufdd0'sve":"h\u00e4st", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", "\ufdd0'mask", "\ufdd0'nom"])}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"fjall", "\ufdd0'sve":"fj\u00e4ll", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", 
+words.all_items = cljs.core.PersistentVector.fromArray([cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"hestur", "\ufdd0'sve":"h\u00e4st", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", "\ufdd0'mask", "\ufdd0'nom"])}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"fjall", "\ufdd0'sve":"fj\u00e4ll", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", 
 "\ufdd0'neutr", "\ufdd0'nom"])}), cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":"eldh\u00fas", "\ufdd0'sve":"k\u00f6k", "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'sing", "\ufdd0'subs", "\ufdd0'neutr", "\ufdd0'nom"])})], !0);
+words.reset_indexes = function(a) {
+  return cljs.core.map.call(null, function(a, c) {
+    return cljs.core.assoc.call(null, a, "\ufdd0'index", c)
+  }, a, cljs.core.range.call(null))
+};
+words.reset_score = function(a) {
+  return cljs.core.map.call(null, function(a) {
+    return cljs.core.assoc.call(null, a, "\ufdd0'score", 0)
+  }, a)
+};
+words.reset = function(a) {
+  return cljs.core.vec.call(null, words.reset_score.call(null, words.reset_indexes.call(null, a)))
+};
 var clojure = {string:{}};
 clojure.string.seq_reverse = function(a) {
   return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
@@ -12820,28 +12833,41 @@ client.word = document.getElementById("word");
 client.correction = document.getElementById("correction");
 client.answer = document.getElementById("answer");
 client.cheat = document.getElementById("cheat");
+client.score = document.getElementById("score");
 client.langlabel = document.getElementById("langlabel");
 client.submit = document.getElementById("submit-button");
 client.ask_both = document.getElementById("ask-both");
 client.ask_isl = document.getElementById("ask-isl");
 client.ask_sve = document.getElementById("ask-sve");
-client.state = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'all-items", "\ufdd0'item", "\ufdd0'question-language", "\ufdd0'answer-language"], {"\ufdd0'all-items":words.all_words, "\ufdd0'item":null, "\ufdd0'question-language":null, "\ufdd0'answer-language":null}));
-client.get_new_word = function() {
-  return cljs.core.rand_nth.call(null, (new cljs.core.Keyword("\ufdd0'all-items")).call(null, cljs.core.deref.call(null, client.state)))
+client.state = cljs.core.atom.call(null, cljs.core.ObjMap.fromObject(["\ufdd0'all-items", "\ufdd0'item", "\ufdd0'question-language", "\ufdd0'answer-language"], {"\ufdd0'all-items":words.reset.call(null, words.all_items), "\ufdd0'item":null, "\ufdd0'question-language":null, "\ufdd0'answer-language":null}));
+client.log_state = function() {
+  return console.log("State: ", "" + cljs.core.str(cljs.core.deref.call(null, client.state)))
+};
+client.get_hard_items = function(a) {
+  var b = (new cljs.core.Keyword("\ufdd0'all-items")).call(null, cljs.core.deref.call(null, client.state)), a = cljs.core.int$.call(null, a * cljs.core.count.call(null, b)), b = cljs.core.sort.call(null, function(a, b) {
+    return(new cljs.core.Keyword("\ufdd0'score")).call(null, a) < (new cljs.core.Keyword("\ufdd0'score")).call(null, b)
+  }, b);
+  return cljs.core.subvec.call(null, b, 0, a)
+};
+client.get_new_item = function() {
+  return cljs.core.rand_nth.call(null, client.get_hard_items.call(null, 0.4))
 };
 client.get_language = function() {
   return cljs.core.truth_(jQuery(client.ask_isl).hasClass("active")) ? "\ufdd0'isl" : cljs.core.truth_(jQuery(client.ask_sve).hasClass("active")) ? "\ufdd0'sve" : cljs.core.rand_nth.call(null, client.languages)
 };
+client.tags_as_string = function(a, b) {
+  return[cljs.core.str("("), cljs.core.str(cljs.core.name.call(null, a)), cljs.core.str(" "), cljs.core.str(clojure.string.join.call(null, " ", cljs.core.map.call(null, function(a) {
+    return cljs.core.name.call(null, a)
+  }, (new cljs.core.Keyword("\ufdd0'tags")).call(null, b)))), cljs.core.str(")")].join("")
+};
 client.show_new_word_BANG_ = function() {
-  var a = client.get_new_word.call(null), b = client.get_language.call(null), c = client.other_language.call(null, b);
+  var a = client.get_new_item.call(null), b = client.get_language.call(null), c = client.other_language.call(null, b);
   console.log(client.get_language.call(null));
   cljs.core.swap_BANG_.call(null, client.state, cljs.core.merge, cljs.core.ObjMap.fromObject(["\ufdd0'item", "\ufdd0'question-language", "\ufdd0'answer-language"], {"\ufdd0'item":a, "\ufdd0'question-language":b, "\ufdd0'answer-language":c}));
   word.innerHTML = b.call(null, a);
   word.style.color = "#000";
   correction.innerHTML = "";
-  langlabel.innerHTML = [cljs.core.str("("), cljs.core.str(cljs.core.name.call(null, b)), cljs.core.str(" "), cljs.core.str(clojure.string.join.call(null, " ", cljs.core.map.call(null, function(a) {
-    return cljs.core.name.call(null, a)
-  }, (new cljs.core.Keyword("\ufdd0'tags")).call(null, a)))), cljs.core.str(")")].join("");
+  langlabel.innerHTML = client.tags_as_string.call(null, b, a);
   answer.value = "";
   return client.answer.focus()
 };
@@ -12851,11 +12877,17 @@ client.correct_answer = function() {
 client.on_new_word_timeout = function() {
   return client.show_new_word_BANG_.call(null)
 };
+client.change_score = function(a) {
+  var b = cljs.core.get_in.call(null, cljs.core.deref.call(null, client.state), cljs.core.PersistentVector.fromArray(["\ufdd0'item", "\ufdd0'index"], !0));
+  return cljs.core.swap_BANG_.call(null, client.state, cljs.core.update_in, cljs.core.PersistentVector.fromArray(["\ufdd0'all-items", b, "\ufdd0'score"], !0), a)
+};
 client.on_correct = function() {
+  client.change_score.call(null, cljs.core.inc);
   word.style.color = "#292";
   return setTimeout(client.on_new_word_timeout, 500)
 };
 client.on_wrong = function() {
+  client.change_score.call(null, cljs.core.dec);
   word.style.color = "#F00";
   correction.innerHTML = [cljs.core.str("= "), cljs.core.str(client.correct_answer.call(null))].join("");
   return setTimeout(client.on_new_word_timeout, 1E3)
