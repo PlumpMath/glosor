@@ -38,7 +38,7 @@
                 (subs-nom "par" "par" :neutr)
                 (subs-nom "skál" "skål" :fem)
                 (subs-nom "þvottavél" "tvättmaskin" :fem)
-                (subs-nom "rafstraumur" "ström" :mask)
+                (subs-nom "rafmagn" "ström" :neutr)
                 (subs-nom "eldavél" "spis" :fem)
                 (subs-nom "prinsessa" "prinsessa" :fem)
                 (subs-nom "skrifstofa" "kontor" :fem)

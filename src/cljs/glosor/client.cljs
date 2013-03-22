@@ -90,7 +90,13 @@
   (when (= 13 (.-keyCode event))
     (on-submit)))
 
+(defn on-select-lang [event]
+  (js/setTimeout show-new-word! 10)) ; A hack since the "click" event happens before the button is set to selected
+
 (.addEventListener submit "click" on-submit)
+(.addEventListener ask-both "click" on-select-lang)
+(.addEventListener ask-isl "click" on-select-lang)
+(.addEventListener ask-sve "click" on-select-lang)
 
 (.button (js/jQuery ask-both) "toggle")
 (show-new-word!)
