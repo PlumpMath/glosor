@@ -74,6 +74,13 @@
                       "fjäll" "fjället" "fjäll" "fjällen"
                       :neutr))
 
+(def mynd (subs-suit "mynd" "myndin" "myndir" "myndirnar"
+                     "mynd" "myndina" "myndir" "myndirnar"
+                     "mynd" "myndinni" "myndum" "myndunum"
+                     "myndar" "myndarinnar" "mynda" "myndanna"
+                     "bild" "bilden" "bilder" "bilderna"
+                     :fem))
+
 (def substantiv
   [(subs-nom "gólf" "golv" :neutr)
    (subs-nom "par" "par" :neutr)
@@ -127,5 +134,5 @@
    (subs-nom "lygi" "lögn" :fem)
    (subs-nom "mamma" "mamma" :fem)])
 
-(def all-items (concat [] fjall))
+(def all-items (shuffle (concat [] hestur fjall mynd)))
 
