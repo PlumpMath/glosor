@@ -6,7 +6,8 @@
                  [hiccup "1.0.2"]
                  [compojure "1.1.5"]]
   :plugins [[lein-cljsbuild "0.3.0"]]
-  ;:hooks [leiningen.cljsbuild]
+  :min-lein-version "2.0.0"
+  :hooks [leiningen.cljsbuild]
   :source-paths ["src/clj"]
   :cljsbuild { 
     :builds {

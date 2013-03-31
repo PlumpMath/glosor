@@ -42,7 +42,8 @@
    :else (rand-nth languages)))
 
 (defn tags-as-string [question-language item]
-  (str "(" (name question-language) " " (string/join " " (map #(name %) (:tags item))) ")"))
+  (let [filtered-tags (remove #{:subs :mask :fem :neutr} (:tags item))]
+    (str "(" (name question-language) " " (string/join " " (map #(name %) filtered-tags)) ")")))
 
 (defn show-new-word! []
   (let [item (get-new-item)

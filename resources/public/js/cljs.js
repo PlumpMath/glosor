@@ -12875,9 +12875,10 @@ client.get_language = function() {
   return cljs.core.truth_(jQuery(client.ask_isl).hasClass("active")) ? "\ufdd0'isl" : cljs.core.truth_(jQuery(client.ask_sve).hasClass("active")) ? "\ufdd0'sve" : cljs.core.rand_nth.call(null, client.languages)
 };
 client.tags_as_string = function(a, b) {
+  var c = cljs.core.remove.call(null, cljs.core.PersistentHashSet.fromArray(["\ufdd0'fem", "\ufdd0'subs", "\ufdd0'mask", "\ufdd0'neutr"]), (new cljs.core.Keyword("\ufdd0'tags")).call(null, b));
   return[cljs.core.str("("), cljs.core.str(cljs.core.name.call(null, a)), cljs.core.str(" "), cljs.core.str(clojure.string.join.call(null, " ", cljs.core.map.call(null, function(a) {
     return cljs.core.name.call(null, a)
-  }, (new cljs.core.Keyword("\ufdd0'tags")).call(null, b)))), cljs.core.str(")")].join("")
+  }, c))), cljs.core.str(")")].join("")
 };
 client.show_new_word_BANG_ = function() {
   var a = client.get_new_item.call(null), b = client.get_language.call(null), c = client.other_language.call(null, b);
