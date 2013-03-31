@@ -1655,94 +1655,94 @@ cljs.core._invoke = function() {
       throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
     }
     return r.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s)
-  }, t = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r) {
-    var t;
-    t = a ? a.cljs$core$IFn$_invoke$arity$18 : a;
-    if(t) {
-      return a.cljs$core$IFn$_invoke$arity$18(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r)
-    }
-    t = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
-    if(!t && (t = cljs.core._invoke._, !t)) {
-      throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
-    }
-    return t.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r)
-  }, u = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t) {
+  }, u = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r) {
     var u;
-    u = a ? a.cljs$core$IFn$_invoke$arity$19 : a;
+    u = a ? a.cljs$core$IFn$_invoke$arity$18 : a;
     if(u) {
-      return a.cljs$core$IFn$_invoke$arity$19(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t)
+      return a.cljs$core$IFn$_invoke$arity$18(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r)
     }
     u = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
     if(!u && (u = cljs.core._invoke._, !u)) {
       throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
     }
-    return u.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t)
-  }, x = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t, u) {
-    var x;
-    x = a ? a.cljs$core$IFn$_invoke$arity$20 : a;
-    if(x) {
-      return a.cljs$core$IFn$_invoke$arity$20(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t, u)
+    return u.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r)
+  }, v = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u) {
+    var t;
+    t = a ? a.cljs$core$IFn$_invoke$arity$19 : a;
+    if(t) {
+      return a.cljs$core$IFn$_invoke$arity$19(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u)
     }
-    x = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
-    if(!x && (x = cljs.core._invoke._, !x)) {
+    t = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
+    if(!t && (t = cljs.core._invoke._, !t)) {
       throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
     }
-    return x.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t, u)
-  }, E = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t, u, x) {
+    return t.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u)
+  }, t = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u, t) {
+    var v;
+    v = a ? a.cljs$core$IFn$_invoke$arity$20 : a;
+    if(v) {
+      return a.cljs$core$IFn$_invoke$arity$20(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u, t)
+    }
+    v = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
+    if(!v && (v = cljs.core._invoke._, !v)) {
+      throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
+    }
+    return v.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u, t)
+  }, E = function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u, t, v) {
     var E;
     E = a ? a.cljs$core$IFn$_invoke$arity$21 : a;
     if(E) {
-      return a.cljs$core$IFn$_invoke$arity$21(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t, u, x)
+      return a.cljs$core$IFn$_invoke$arity$21(a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u, t, v)
     }
     E = cljs.core._invoke[goog.typeOf(null == a ? null : a)];
     if(!E && (E = cljs.core._invoke._, !E)) {
       throw cljs.core.missing_protocol.call(null, "IFn.-invoke", a);
     }
-    return E.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, t, u, x)
-  }, a = function(a, v, w, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O, P, Q) {
+    return E.call(null, a, b, c, d, e, f, g, h, i, j, k, m, l, n, q, p, s, r, u, t, v)
+  }, a = function(a, w, x, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O, P, Q) {
     switch(arguments.length) {
       case 1:
         return b.call(this, a);
       case 2:
-        return c.call(this, a, v);
+        return c.call(this, a, w);
       case 3:
-        return d.call(this, a, v, w);
+        return d.call(this, a, w, x);
       case 4:
-        return e.call(this, a, v, w, y);
+        return e.call(this, a, w, x, y);
       case 5:
-        return f.call(this, a, v, w, y, z);
+        return f.call(this, a, w, x, y, z);
       case 6:
-        return g.call(this, a, v, w, y, z, A);
+        return g.call(this, a, w, x, y, z, A);
       case 7:
-        return h.call(this, a, v, w, y, z, A, B);
+        return h.call(this, a, w, x, y, z, A, B);
       case 8:
-        return i.call(this, a, v, w, y, z, A, B, C);
+        return i.call(this, a, w, x, y, z, A, B, C);
       case 9:
-        return j.call(this, a, v, w, y, z, A, B, C, D);
+        return j.call(this, a, w, x, y, z, A, B, C, D);
       case 10:
-        return k.call(this, a, v, w, y, z, A, B, C, D, F);
+        return k.call(this, a, w, x, y, z, A, B, C, D, F);
       case 11:
-        return m.call(this, a, v, w, y, z, A, B, C, D, F, G);
+        return m.call(this, a, w, x, y, z, A, B, C, D, F, G);
       case 12:
-        return l.call(this, a, v, w, y, z, A, B, C, D, F, G, H);
+        return l.call(this, a, w, x, y, z, A, B, C, D, F, G, H);
       case 13:
-        return n.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I);
+        return n.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I);
       case 14:
-        return p.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J);
+        return p.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J);
       case 15:
-        return q.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J, K);
+        return q.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J, K);
       case 16:
-        return r.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J, K, L);
+        return r.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J, K, L);
       case 17:
-        return s.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J, K, L, M);
+        return s.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J, K, L, M);
       case 18:
-        return t.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N);
+        return u.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N);
       case 19:
-        return u.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O);
+        return v.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O);
       case 20:
-        return x.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O, P);
+        return t.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O, P);
       case 21:
-        return E.call(this, a, v, w, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O, P, Q)
+        return E.call(this, a, w, x, y, z, A, B, C, D, F, G, H, I, J, K, L, M, N, O, P, Q)
     }
     throw Error("Invalid arity: " + arguments.length);
   };
@@ -1763,9 +1763,9 @@ cljs.core._invoke = function() {
   a.cljs$lang$arity$15 = q;
   a.cljs$lang$arity$16 = r;
   a.cljs$lang$arity$17 = s;
-  a.cljs$lang$arity$18 = t;
-  a.cljs$lang$arity$19 = u;
-  a.cljs$lang$arity$20 = x;
+  a.cljs$lang$arity$18 = u;
+  a.cljs$lang$arity$19 = v;
+  a.cljs$lang$arity$20 = t;
   a.cljs$lang$arity$21 = E;
   return a
 }();
@@ -5592,27 +5592,27 @@ cljs.core.apply_to = function(a, b, c) {
   if(15 === b) {
     return a.cljs$lang$arity$15 ? a.cljs$lang$arity$15(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q)
   }
-  var r = cljs.core._first.call(null, s), t = cljs.core._rest.call(null, s);
+  var r = cljs.core._first.call(null, s), u = cljs.core._rest.call(null, s);
   if(16 === b) {
     return a.cljs$lang$arity$16 ? a.cljs$lang$arity$16(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r)
   }
-  var s = cljs.core._first.call(null, t), u = cljs.core._rest.call(null, t);
+  var s = cljs.core._first.call(null, u), v = cljs.core._rest.call(null, u);
   if(17 === b) {
     return a.cljs$lang$arity$17 ? a.cljs$lang$arity$17(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s)
   }
-  var t = cljs.core._first.call(null, u), x = cljs.core._rest.call(null, u);
+  var u = cljs.core._first.call(null, v), t = cljs.core._rest.call(null, v);
   if(18 === b) {
-    return a.cljs$lang$arity$18 ? a.cljs$lang$arity$18(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, t) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, t)
+    return a.cljs$lang$arity$18 ? a.cljs$lang$arity$18(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, u) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, u)
   }
-  u = cljs.core._first.call(null, x);
-  x = cljs.core._rest.call(null, x);
+  v = cljs.core._first.call(null, t);
+  t = cljs.core._rest.call(null, t);
   if(19 === b) {
-    return a.cljs$lang$arity$19 ? a.cljs$lang$arity$19(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, t, u) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, t, u)
+    return a.cljs$lang$arity$19 ? a.cljs$lang$arity$19(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, u, v) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, u, v)
   }
-  var E = cljs.core._first.call(null, x);
-  cljs.core._rest.call(null, x);
+  var E = cljs.core._first.call(null, t);
+  cljs.core._rest.call(null, t);
   if(20 === b) {
-    return a.cljs$lang$arity$20 ? a.cljs$lang$arity$20(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, t, u, E) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, t, u, E)
+    return a.cljs$lang$arity$20 ? a.cljs$lang$arity$20(c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, u, v, E) : a.call(null, c, d, e, f, g, a, h, i, j, k, m, l, n, p, q, r, s, u, v, E)
   }
   throw Error("Only up to 20 arguments supported on functions");
 };
@@ -12707,19 +12707,26 @@ var words = {reset_indexes:function(a) {
 }, verb_inf:function(a, b) {
   return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray(["\ufdd0'inf", "\ufdd0'verb"])})
 }, subs_nom:function(a, b, c) {
-  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray([c, "\ufdd0'sing", "\ufdd0'subs", "\ufdd0'nom"])})
+  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray([c, "\ufdd0'sing", "\ufdd0'subs", "\ufdd0'obest", "\ufdd0'nom"])})
 }, subs_nom_plur:function(a, b, c) {
-  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray([c, "\ufdd0'subs", "\ufdd0'nom", "\ufdd0'plur"])})
+  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray([c, "\ufdd0'subs", "\ufdd0'obest", "\ufdd0'nom", "\ufdd0'plur"])})
+}, sub:function(a, b, c, d, e) {
+  return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve", "\ufdd0'tags"], {"\ufdd0'isl":a, "\ufdd0'sve":b, "\ufdd0'tags":cljs.core.PersistentHashSet.fromArray([c, "\ufdd0'subs", d, e])})
+}, subs_suit:function(a, b, c, d, e, f, g, h, i, j, k, m, l, n, p, q, r, s, u, v, t) {
+  return cljs.core.PersistentVector.fromArray([words.sub.call(null, a, r, t, "\ufdd0'nom", "\ufdd0'sing"), words.sub.call(null, b, s, t, "\ufdd0'nom", "\ufdd0'sing"), words.sub.call(null, c, u, t, "\ufdd0'nom", "\ufdd0'plur"), words.sub.call(null, d, v, t, "\ufdd0'nom", "\ufdd0'plur"), words.sub.call(null, e, r, t, "\ufdd0'ack", "\ufdd0'sing"), words.sub.call(null, f, s, t, "\ufdd0'ack", "\ufdd0'sing"), words.sub.call(null, g, u, t, "\ufdd0'ack", "\ufdd0'plur"), words.sub.call(null, h, v, t, "\ufdd0'ack", 
+  "\ufdd0'plur"), words.sub.call(null, i, r, t, "\ufdd0'dat", "\ufdd0'sing"), words.sub.call(null, j, s, t, "\ufdd0'dat", "\ufdd0'sing"), words.sub.call(null, k, u, t, "\ufdd0'dat", "\ufdd0'plur"), words.sub.call(null, m, v, t, "\ufdd0'dat", "\ufdd0'plur"), words.sub.call(null, l, r, t, "\ufdd0'gen", "\ufdd0'sing"), words.sub.call(null, n, s, t, "\ufdd0'gen", "\ufdd0'sing"), words.sub.call(null, p, u, t, "\ufdd0'gen", "\ufdd0'plur"), words.sub.call(null, q, v, t, "\ufdd0'gen", "\ufdd0'plur")], !0)
 }, adj:function(a, b) {
   return cljs.core.ObjMap.fromObject(["\ufdd0'isl", "\ufdd0'sve"], {"\ufdd0'isl":a, "\ufdd0'sve":b})
 }};
-words.all_items = cljs.core.PersistentVector.fromArray([words.subs_nom.call(null, "g\u00f3lf", "golv", "\ufdd0'neutr"), words.subs_nom.call(null, "par", "par", "\ufdd0'neutr"), words.subs_nom.call(null, "sk\u00e1l", "sk\u00e5l", "\ufdd0'fem"), words.subs_nom.call(null, "\u00fevottav\u00e9l", "tv\u00e4ttmaskin", "\ufdd0'fem"), words.subs_nom.call(null, "rafmagn", "str\u00f6m", "\ufdd0'neutr"), words.subs_nom.call(null, "eldav\u00e9l", "spis", "\ufdd0'fem"), words.subs_nom.call(null, "prinsessa", "prinsessa", 
-"\ufdd0'fem"), words.subs_nom.call(null, "skrifstofa", "kontor", "\ufdd0'fem"), words.subs_nom.call(null, "br\u00e9f", "brev", "\ufdd0'neutr"), words.subs_nom.call(null, "s\u00edmi", "telefon", "\ufdd0'mask"), words.subs_nom.call(null, "skjal", "dokument", "\ufdd0'neutr"), words.subs_nom_plur.call(null, "stj\u00f3rnm\u00e1l", "politik", "\ufdd0'neutr"), words.subs_nom.call(null, "\u00edhald", "konservatism", "\ufdd0'neutr"), words.subs_nom.call(null, "fundur", "m\u00f6te", "\ufdd0'mask"), words.subs_nom.call(null, 
-"eldur", "eld", "\ufdd0'mask"), words.subs_nom.call(null, "sl\u00f6kkvili\u00f0", "brandk\u00e5r", "\ufdd0'neutr"), words.subs_nom.call(null, "efni", "material", "\ufdd0'neutr"), words.subs_nom.call(null, "kafli", "kapitel", "\ufdd0'mask"), words.subs_nom.call(null, "sk\u00f3gur", "skog", "\ufdd0'mask"), words.subs_nom.call(null, "h\u00fas", "hus", "\ufdd0'neutr"), words.subs_nom.call(null, "\u00feak", "tak", "\ufdd0'neutr"), words.subs_nom.call(null, "gluggakarmur", "f\u00f6nsterkarm", "\ufdd0'mask"), 
-words.subs_nom.call(null, "dreki", "drake", "\ufdd0'mask"), words.subs_nom.call(null, "foreldri", "f\u00f6r\u00e4lder", "\ufdd0'neutr"), words.subs_nom.call(null, "pabbi", "pappa", "\ufdd0'mask"), words.subs_nom.call(null, "land", "land", "\ufdd0'neutr"), words.subs_nom.call(null, "fjall", "fj\u00e4ll", "\ufdd0'neutr"), words.subs_nom.call(null, "dalur", "dal", "\ufdd0'mask"), words.subs_nom.call(null, "eldh\u00fas", "k\u00f6k", "\ufdd0'neutr"), words.subs_nom.call(null, "matur", "mat", "\ufdd0'mask"), 
-words.subs_nom.call(null, "grautur", "gr\u00f6t", "\ufdd0'mask"), words.subs_nom.call(null, "diskur", "tallrik", "\ufdd0'mask"), words.subs_nom.call(null, "st\u00f3ll", "stol", "\ufdd0'mask"), words.subs_nom.call(null, "baki", "rygg", "\ufdd0'neutr"), words.subs_nom.call(null, "gestur", "g\u00e4st", "\ufdd0'mask"), words.subs_nom.call(null, "kaffi", "kaffe", "\ufdd0'neutr"), words.subs_nom.call(null, "svefnherbergi", "sovrum", "\ufdd0'neutr"), words.subs_nom.call(null, "r\u00fam", "s\u00e4ng", "\ufdd0'neutr"), 
-words.subs_nom.call(null, "gafl", "gavel", "\ufdd0'mask"), words.subs_nom.call(null, "s\u00e6ng", "t\u00e4cke", "\ufdd0'fem"), words.subs_nom.call(null, "morgunn", "morgon", "\ufdd0'mask"), words.subs_nom.call(null, "s\u00f3l", "sol", "\ufdd0'fem"), words.subs_nom.call(null, "gluggi", "f\u00f6nster", "\ufdd0'mask"), words.subs_nom.call(null, "\u00e1st", "k\u00e4rlek", "\ufdd0'fem"), words.subs_nom.call(null, "m\u00e1l", "m\u00e5ltid", "\ufdd0'neutr"), words.subs_nom.call(null, "hjarta", "hj\u00e4rta", 
-"\ufdd0'neutr"), words.subs_nom.call(null, "ors\u00f6k", "orsak", "\ufdd0'fem"), words.subs_nom.call(null, "vandi", "problem", "\ufdd0'mask"), words.subs_nom.call(null, "\u00fev\u00e6la", "strunt", "\ufdd0'fem"), words.subs_nom.call(null, "lygi", "l\u00f6gn", "\ufdd0'fem"), words.subs_nom.call(null, "mamma", "mamma", "\ufdd0'fem")], !0);
+words.hestur = words.subs_suit.call(null, "hestur", "hesturinn", "hestar", "hestarnir", "hest", "hestinn", "hesta", "hestana", "hesti", "hestinum", "hestum", "hestunum", "hests", "hestsins", "hesta", "hestanna", "h\u00e4st", "h\u00e4sten", "h\u00e4star", "h\u00e4starna", "\ufdd0'mask");
+words.substantiv = cljs.core.PersistentVector.fromArray([words.subs_nom.call(null, "g\u00f3lf", "golv", "\ufdd0'neutr"), words.subs_nom.call(null, "par", "par", "\ufdd0'neutr"), words.subs_nom.call(null, "sk\u00e1l", "sk\u00e5l", "\ufdd0'fem"), words.subs_nom.call(null, "\u00fevottav\u00e9l", "tv\u00e4ttmaskin", "\ufdd0'fem"), words.subs_nom.call(null, "rafmagn", "str\u00f6m", "\ufdd0'neutr"), words.subs_nom.call(null, "eldav\u00e9l", "spis", "\ufdd0'fem"), words.subs_nom.call(null, "prinsessa", 
+"prinsessa", "\ufdd0'fem"), words.subs_nom.call(null, "skrifstofa", "kontor", "\ufdd0'fem"), words.subs_nom.call(null, "br\u00e9f", "brev", "\ufdd0'neutr"), words.subs_nom.call(null, "s\u00edmi", "telefon", "\ufdd0'mask"), words.subs_nom.call(null, "skjal", "dokument", "\ufdd0'neutr"), words.subs_nom_plur.call(null, "stj\u00f3rnm\u00e1l", "politik", "\ufdd0'neutr"), words.subs_nom.call(null, "\u00edhald", "konservatism", "\ufdd0'neutr"), words.subs_nom.call(null, "fundur", "m\u00f6te", "\ufdd0'mask"), 
+words.subs_nom.call(null, "eldur", "eld", "\ufdd0'mask"), words.subs_nom.call(null, "sl\u00f6kkvili\u00f0", "brandk\u00e5r", "\ufdd0'neutr"), words.subs_nom.call(null, "efni", "material", "\ufdd0'neutr"), words.subs_nom.call(null, "kafli", "kapitel", "\ufdd0'mask"), words.subs_nom.call(null, "sk\u00f3gur", "skog", "\ufdd0'mask"), words.subs_nom.call(null, "h\u00fas", "hus", "\ufdd0'neutr"), words.subs_nom.call(null, "\u00feak", "tak", "\ufdd0'neutr"), words.subs_nom.call(null, "gluggakarmur", "f\u00f6nsterkarm", 
+"\ufdd0'mask"), words.subs_nom.call(null, "dreki", "drake", "\ufdd0'mask"), words.subs_nom.call(null, "foreldri", "f\u00f6r\u00e4lder", "\ufdd0'neutr"), words.subs_nom.call(null, "pabbi", "pappa", "\ufdd0'mask"), words.subs_nom.call(null, "land", "land", "\ufdd0'neutr"), words.subs_nom.call(null, "fjall", "fj\u00e4ll", "\ufdd0'neutr"), words.subs_nom.call(null, "dalur", "dal", "\ufdd0'mask"), words.subs_nom.call(null, "eldh\u00fas", "k\u00f6k", "\ufdd0'neutr"), words.subs_nom.call(null, "matur", 
+"mat", "\ufdd0'mask"), words.subs_nom.call(null, "grautur", "gr\u00f6t", "\ufdd0'mask"), words.subs_nom.call(null, "diskur", "tallrik", "\ufdd0'mask"), words.subs_nom.call(null, "st\u00f3ll", "stol", "\ufdd0'mask"), words.subs_nom.call(null, "baki", "rygg", "\ufdd0'neutr"), words.subs_nom.call(null, "gestur", "g\u00e4st", "\ufdd0'mask"), words.subs_nom.call(null, "kaffi", "kaffe", "\ufdd0'neutr"), words.subs_nom.call(null, "svefnherbergi", "sovrum", "\ufdd0'neutr"), words.subs_nom.call(null, "r\u00fam", 
+"s\u00e4ng", "\ufdd0'neutr"), words.subs_nom.call(null, "gafl", "gavel", "\ufdd0'mask"), words.subs_nom.call(null, "s\u00e6ng", "t\u00e4cke", "\ufdd0'fem"), words.subs_nom.call(null, "morgunn", "morgon", "\ufdd0'mask"), words.subs_nom.call(null, "s\u00f3l", "sol", "\ufdd0'fem"), words.subs_nom.call(null, "gluggi", "f\u00f6nster", "\ufdd0'mask"), words.subs_nom.call(null, "\u00e1st", "k\u00e4rlek", "\ufdd0'fem"), words.subs_nom.call(null, "m\u00e1l", "m\u00e5ltid", "\ufdd0'neutr"), words.subs_nom.call(null, 
+"hjarta", "hj\u00e4rta", "\ufdd0'neutr"), words.subs_nom.call(null, "ors\u00f6k", "orsak", "\ufdd0'fem"), words.subs_nom.call(null, "vandi", "problem", "\ufdd0'mask"), words.subs_nom.call(null, "\u00fev\u00e6la", "strunt", "\ufdd0'fem"), words.subs_nom.call(null, "lygi", "l\u00f6gn", "\ufdd0'fem"), words.subs_nom.call(null, "mamma", "mamma", "\ufdd0'fem")], !0);
+words.all_items = cljs.core.concat.call(null, cljs.core.PersistentVector.EMPTY, words.hestur);
 var clojure = {string:{}};
 clojure.string.seq_reverse = function(a) {
   return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, a)
