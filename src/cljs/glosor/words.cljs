@@ -67,6 +67,13 @@
                        "häst"   "hästen"    "hästar"   "hästarna"
                        :mask))
 
+(def fjall (subs-suit "fjall" "fjallið" "fjöll" "fjöllin"
+                      "fjall" "fjallið" "fjöll" "fjöllin"
+                      "fjalli" "fjallinu" "fjöllum" "fjöllunum"
+                      "fjalls" "fjallsins" "fjalla" "fjallanna"
+                      "fjäll" "fjället" "fjäll" "fjällen"
+                      :neutr))
+
 (def substantiv
   [(subs-nom "gólf" "golv" :neutr)
    (subs-nom "par" "par" :neutr)
@@ -120,5 +127,5 @@
    (subs-nom "lygi" "lögn" :fem)
    (subs-nom "mamma" "mamma" :fem)])
 
-(def all-items (concat [] hestur))
+(def all-items (concat [] fjall))
 
